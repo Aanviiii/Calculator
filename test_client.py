@@ -1,9 +1,7 @@
 import socket
 
-
 HOST = "localhost"
 PORT = 8080
-
 
 client = socket.create_connection(
     (HOST, PORT)
@@ -17,6 +15,7 @@ requests = [
 ]
 
 for req in requests:
+
     client.sendall(req.encode())
 
     response = client.recv(4096)
